@@ -48,9 +48,23 @@ App.prototype.renderTop = function(callback){
 }
 //渲染二级分类
 App.prototype.renderSecond = function(topId){
-
+    var that = this;
+    $.ajax({
+        type:'get',
+        url:'/category/querySecondCategory',
+        data:{id:topId},
+        dataType:'json',
+        success:function(data){
+            that.$second.html(template('second',data));
+        }
+    })
 }
 //绑定事件
 App.prototype.bindEvent = function(){
-
+    var that = this;
+    that.$top.on('tap','a',function(){
+        if($(this).parent().hasClass('now')) return;
+        $(this).parent().addClass('now').siblings('li').removeClass('now');
+        that.renderSecond(this.dataset.id);
+    })
 }

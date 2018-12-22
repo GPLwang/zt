@@ -19,6 +19,7 @@
 }
 .zt_cateLeft ul li a{
     color: #444;
+    display: block;
 }
 .zt_cateLeft ul li.now{
     background-color: #fff;
@@ -26,6 +27,12 @@
 }
 .zt_cateLeft ul li.now a{
     color: red;
+}
+.zt_cateRight ul li.nd {
+    width: 100%;
+    font-size: 14px;
+    color: #444;
+    text-align: center;
 }
 .zt_cateRight {
     flex: 1;
@@ -58,7 +65,6 @@
 }
 
 .mui-scroll-wrapper.one{
--
     width: 90px;
 }
 .mui-scroll-wrapper.two{

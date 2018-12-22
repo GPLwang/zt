@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>分类</title>
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/mobile.css">
@@ -15,23 +15,14 @@
 <body>
     <div class="zt_container">
         <header class="zt_header">
-            <a href="#" class="left"><span class="fa fa-chevron-left"></span></a>
+            <a href="javascript:history.back();" class="left"><span class="fa fa-chevron-left"></span></a>
             <h3>商品分类</h3>
-            <a href="#" class="right"><span class="fa fa-search"></span></a>
+            <a href="search.html" class="right"><span class="fa fa-search"></span></a>
         </header>
         <section class="zt_content flex">
             <div class="mui-scroll-wrapper one">
                 <div class="mui-scroll">
-                    <div class="zt_cateLeft">
-                        <!-- todo render -->
-                        <!-- <ul>
-                            <li class="now"><a href="javascript:;">运动馆</a></li>
-                            <li><a href="javascript:;">运动馆</a></li>
-                            <li><a href="javascript:;">运动馆</a></li>
-                            <li><a href="javascript:;">运动馆</a></li>
-                            <li><a href="javascript:;">运动馆</a></li>
-                             <li><a href="javascript:;">运动馆</a></li>
-                        </ul> -->
+                    <div class="zt_cateLeft"> 
                     </div>
 
                 </div>
@@ -39,23 +30,6 @@
             <div class="mui-scroll-wrapper two">
                 <div class="mui-scroll">
                     <div class="zt_cateRight mui-clearfix">
-                        <ul>
-                            <li><a href="#"><img src="images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a></li>
-                            <li><a href="#"><img src="images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a></li>
-                            <li><a href="#"><img src="images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a></li>
-                            <li><a href="#"><img src="images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a></li>
-                            <li><a href="#"><img src="images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -80,6 +54,17 @@
             {{each $data}}
             <li class="{{$index===0?'now':''}}"><a data-id="{{$value.id}}" href="javascript:;">{{$value.categoryName}}</a></li>
             {{/each}}
+        </ul>
+    </script>
+    <script type="text/template" id="second">
+        <ul>
+            {{ if total }}
+            {{each rows item i}}
+            <li><a href="#"><img src="{{item.brandLogo}}" onerror="this.src='images/none01.jpg'" alt=""><p>{{item.brandName}}</p></a></li>
+            {{/each}}
+            {{else}}
+                <li class="nd">暂无数据</li>
+            {{ /if }}
         </ul>
     </script>
     <script src="assets/mui/js/mui.min.js"></script>
