@@ -17,7 +17,7 @@ App.prototype.init = function () {
 //默认渲染
 App.prototype.render = function () {
     //数据存在localstorage  约定 key  value '["a","b"]'
-    this.$el.html(template('history',{list:this.list}));
+    this.$el.html(template('history',{list:this.list,ec:encodeURIComponent}));
 }
 //绑定事件
 App.prototype.bindEvent = function () {
@@ -32,6 +32,13 @@ App.prototype.bindEvent = function () {
         }
         that.pushHistory(value);
     });
+    //点击删除
+    that.$el.on('tap','.fa-close',function(){
+        that.delHistory(this);
+    }).on('tap','.head a',function(){
+        that.clearHistory();
+    })
+    //点击清空
 }
 //追加历史
 App.prototype.pushHistory = function (value) {
@@ -51,13 +58,18 @@ App.prototype.pushHistory = function (value) {
     }
         this.list.push(value); 
         localStorage.setItem(this.key,JSON.stringify(this.list));
-        location.href = 'searchList.html';
+        location.href = 'searchList.html?proName=' + encodeURIComponent(value);
 }
 //删除历史
-App.prototype.delHistory = function () {
-
+App.prototype.delHistory = function (btn) {
+    this.list.splice(btn.dataset.index,1);
+    this.render();
+    //更新本地存储
+    localStorage.setItem(this.key,JSON.stringify(this.list));
 }
 //清空历史
 App.prototype.clearHistory = function () {
-
+    this.list = [];
+    this.render();
+    localStorage.setItem(this.key,JSON.stringify(this.list));
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/search.css">
 </head>
-
 <body>
     <div class="zt_container">
         <header class="zt_header">
@@ -49,9 +47,8 @@
                 <a href="javascript:;"><span class="fa fa-trash">清空历史</span></a>
             </div>
             <ul>
-                
                 <% for(var i=list.length-1;i>=0;i--){%>
-                <li><a href="#">{{list[i]}}</a><span data-index="{{i}}" class="fa fa-close"></span></li>
+                <li><a href="searchList.html?proName={{ec(list[i])}}">{{list[i]}}</a><span data-index="{{i}}" class="fa fa-close"></span></li>
                 <%}%>
             </ul>
             {{else}}
@@ -64,5 +61,4 @@
     <script src="js/mobile.js"></script>
     <script src="js/search.js"></script>
 </body>
-
 </html>
