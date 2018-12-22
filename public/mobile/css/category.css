@@ -1,0 +1,68 @@
+.zt_content.flex{
+    position: relative;
+}
+.zt_cateLeft{
+    width: 90px;
+    height: 100%;
+}
+.zt_cateLeft ul {
+    width: 100%;
+}
+.zt_cateLeft ul li{
+    background: #f3f4f5;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-size: 12px; 
+    text-align: center;
+}
+.zt_cateLeft ul li a{
+    color: #444;
+}
+.zt_cateLeft ul li.now{
+    background-color: #fff;
+    border-right: none;
+}
+.zt_cateLeft ul li.now a{
+    color: red;
+}
+.zt_cateRight {
+    flex: 1;
+    height: 100%;   
+}
+.zt_cateRight ul{
+    width: 100%;
+}
+.zt_cateRight ul li {
+    width: 33.33333%;
+    float: left;
+    margin-top: 10px;
+}
+.zt_cateRight ul li a{
+    display: block;
+    width: 100%;
+}
+.zt_cateRight ul li a img{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin:  0 auto;
+}
+.zt_cateRight ul li a p{
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+    color: #666;
+    margin-bottom: 0; 
+}
+
+.mui-scroll-wrapper.one{
+-
+    width: 90px;
+}
+.mui-scroll-wrapper.two{
+    margin-left: 90px;
+    flex: 1;
+    position: relative;
+}
