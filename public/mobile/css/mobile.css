@@ -160,3 +160,6 @@ ul{
  text-align: center;
  border-radius:0 2px 2px 0;
 }
+.mui-toast-container{
+    bottom: 65px;
+}
