@@ -1,0 +1,16 @@
+.zt_order {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #eee;
+    font-size: 12px;
+}
+.zt_order a{
+    width: 25%;
+    color: #666;
+    float: left;
+    text-align: center;
+}
+.zt_order a.now{
+    color: red;
+}
